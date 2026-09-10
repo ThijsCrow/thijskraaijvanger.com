@@ -25,7 +25,8 @@
   --container-padding-x: var(--space-16);
   --container-padding-y: var(--space-32);
   --text-max-width: 400px;
-  --radius: 4px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
  
   --font-heading: "Times New Roman", Times, serif;
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -92,7 +93,7 @@ img {
   justify-content: center;
   gap: var(--space-6);
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   padding: var(--space-8) var(--space-12);
   background: transparent;
   font-family: var(--font-cta);
@@ -136,6 +137,8 @@ img {
   align-items: center;
 }
 
+
+
 header .container {
   padding-top: calc(var(--container-padding-y) / 2);
   padding-bottom: calc(var(--container-padding-y) / 2);
@@ -145,6 +148,18 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+
+
+.navigation-bar {
+  display: flex;
+  padding: var(--space-4);
+  align-items: center;
+  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-card);
+  list-style: none;
 }
 
 
