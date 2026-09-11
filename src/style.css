@@ -289,3 +289,41 @@ header {
   object-position: bottom right;
   z-index: 1;
 }
+
+
+
+.experience-card-container {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  gap: var(--space-32);
+}
+
+.experience-card {
+  display: flex;
+  width: calc((var(--container-width) - var(--space-16)) / 2);
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.experience-icon {
+  display: flex;
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text-heading);
+  width: fit-content;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-heading);
+  gap: 0px;
+}
+
