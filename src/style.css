@@ -56,7 +56,7 @@ html {
 }
 
 * {
-    outline: red solid 1px !important;
+    outline: red solid 0px !important;
 }
 
 body {
@@ -177,11 +177,83 @@ header {
 
 
 
+.skills-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: var(--space-32);
+}
+
+.skills-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 224px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Horizontale overlap op desktop */
+.skills-card + .skills-card {
+  margin-left: -32px;
+}
+
+.skills-card--pink   { background-color: var(--color-pink);   transform: rotate(4deg); }
+.skills-card--blue   { background-color: var(--color-blue);   transform: rotate(-4deg) translateY(32px); }
+.skills-card--yellow { background-color: var(--color-yellow); transform: rotate(4deg); }
+
+.skills-info {
+  padding: var(--space-16);
+}
+
+.skills-icon {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+}
+
+.skills-card:nth-child(1) .skills-icon { align-self: flex-start; }
+.skills-card:nth-child(2) .skills-icon { align-self: center; }
+.skills-card:nth-child(3) .skills-icon { align-self: flex-end; }
+
+@media (max-width: 640px) {
+  .skills-container {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .skills-card + .skills-card {
+    margin-left: 0;
+    margin-top: calc(var(--space-64) * -1);
+  }
+
+  /* Reset vertical offset */
+  .skills-card--blue {
+    transform: rotate(-4deg);
+  }
+
+  .skills-card:nth-child(1) { align-self: flex-start; }
+  .skills-card:nth-child(2) { align-self: center; }
+  .skills-card:nth-child(3) { align-self: flex-end; }
+}
+
+@media (max-width: 480px) {
+  .skills-card + .skills-card {
+    margin-left: 0;
+    margin-top: calc(var(--space-32) * -1);
+  }
+
+  .skills-card:nth-child(1) { align-self: center; }
+  .skills-card:nth-child(2) { align-self: flex-start; }
+  .skills-card:nth-child(3) { align-self: flex-end; }
+}
+
+
 .project-card {
   position: relative;
   display: flex;
   height: 220px;
-  padding: var(--space-16, 16px);
+  padding: var(--space-16);
   flex-direction: row;
   background-color: var(--color-card);
   width: 100%;
@@ -203,7 +275,7 @@ header {
 .project-header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4, 4px);
+  gap: var(--space-4);
 }
 
 .project-card > img {
