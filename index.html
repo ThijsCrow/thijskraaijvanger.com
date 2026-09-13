@@ -17,7 +17,6 @@
                 </ul>
             </nav>
         </div>
-
     </header>
 
     <main>
@@ -106,9 +105,99 @@
 
         </section>
 
-        <section id="about" class="container">
-            <h2>About</h2>
-        </section>
+
+
+<section id="about" class="container">
+    <div class="tab-wrapper">
+        <input type="radio" id="tab-experiences" name="about-tabs" checked hidden>
+        <input type="radio" id="tab-educations" name="about-tabs" hidden>
+
+        <!-- Tab Controls (styled like main navigation) -->
+        <div class="navigation-bar">
+            <label for="tab-experiences" class="btn btn-tab">Experiences</label>
+            <label for="tab-educations" class="btn btn-tab">Educations</label>
+        </div>
+
+        <div class="tab-content tab-content--experiences">
+            <div class="timeline-grid">
+                <article class="timeline-card timeline-card--featured">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/yooker.svg" alt="Icon of Yooker">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>Strategic Webdesigner</h3>
+                        <p>Yooker · Internship & Part-time</p>
+                    </div>
+                    <p class="timeline-card__dates">Jun 2023 - Present</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/gewest13.svg" alt="Icon of Gewest13">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>Digital / Graphic Designer</h3>
+                        <p>Gewest13 · Internship</p>
+                    </div>
+                    <p class="timeline-card__dates">Feb 2025 - Jun 2025</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/aangenaam_marketing.svg" alt="Icon of Aangenaam Marketing">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>Graphic Designer</h3>
+                        <p>Aangenaam Marketing · Internship</p>
+                    </div>
+                    <p class="timeline-card__dates">Aug 2021 - Jan 2022</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="tab-content tab-content--educations">
+            <div class="timeline-grid">
+                <article class="timeline-card timeline-card--featured">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/fontys.svg" alt="Icon of Fontys">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>ICT</h3>
+                        <p>Fontys · Associate Degree</p>
+                    </div>
+                    <p class="timeline-card__dates">Sep 2025 - Present</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/sintlucas.svg" alt="Icon of SintLucas">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>Media Designer</h3>
+                        <p>SintLucas · MBO (level 4)</p>
+                    </div>
+                    <p class="timeline-card__dates">Feb 2025 - Jun 2025</p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-card__icon">
+                        <img src="/media/experience/sintlucas.svg" alt="Icon of SintLucas">
+                    </div>
+                    <div class="timeline-card__header">
+                        <h3>Allround Mediamaker</h3>
+                        <p>SintLucas · MBO (level 3)</p>
+                    </div>
+                    <p class="timeline-card__dates">Aug 2021 - Jan 2022</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
 
         <section id="contact" class="container">
             <h2>Contact</h2>

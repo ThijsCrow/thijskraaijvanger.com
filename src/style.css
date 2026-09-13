@@ -289,3 +289,83 @@ header {
   object-position: bottom right;
   z-index: 1;
 }
+
+
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  width: 100%;
+  border-radius: var(--radius-md);
+  background-color: var(--color-card);
+}
+
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 640px) {
+  .timeline-card {
+    grid-column: span 2;
+  }
+}
+
+.timeline-card--featured {
+  grid-column: span 2;
+}
+
+.timeline-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-card);
+  width: fit-content;
+}
+
+.timeline-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+
+
+.tab-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.btn-tab {
+  user-select: none;
+  cursor: pointer;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+#tab-experiences:checked ~ .navigation-bar label[for="tab-experiences"],
+#tab-educations:checked ~ .navigation-bar label[for="tab-educations"] {
+  background-color: var(--color-button);
+  font-weight: var(--font-weight-cta);
+  color: var(--color-text-heading);
+}
+
+#tab-experiences:checked ~ .tab-content--experiences,
+#tab-educations:checked ~ .tab-content--educations {
+  display: block;
+}
