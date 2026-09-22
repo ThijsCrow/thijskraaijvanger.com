@@ -17,13 +17,13 @@
 .project-header-titles {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-8);
 }
 
 .project-main-title {
   font-family: var(--font-heading);
   font-size: calc(var(--font-size-heading) * 1.5);
-  line-height: calc(var(--font-size-heading) * 1.5);
+  line-height: calc(var(--lh-heading) * 1.5);
 }
 
 
