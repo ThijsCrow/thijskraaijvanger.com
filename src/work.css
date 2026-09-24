@@ -62,7 +62,7 @@
 .work-text-block {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8); /* Ruimte tussen H2 en paragraaf-teksten */
+  gap: var(--space-8);
   text-align: left;
 }
 
@@ -77,6 +77,51 @@
   justify-content: center;
   align-items: center;
 }
+
+.project-media-macbook {
+  position: relative;
+  background-color: transparent;
+  padding: var(--space-32);
+  overflow: visible;
+}
+
+/* De grijze achtergrond die pas 64px vanaf de bovenkant begint */
+.project-media-macbook::before {
+  content: "";
+  position: absolute;
+  inset: var(--space-64) 0 0 0;
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+.project-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.project-media-grid .media-card {
+  display: flex;
+  align-items: flex-start; /* Zorgt dat de afbeelding exact bovenaan begint */
+  aspect-ratio: 1/1;
+  padding: var(--space-32) var(--space-32) 0 var(--space-32);
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden; /* Snijdt alles af wat onder de kaart uitsteekt */
+}
+
+.project-media-grid .media-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top; /* Garandeert dat de bovenkant van de afbeelding zichtbaar blijft */
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+
 
 .project-media img,
 .project-media lottie-player {
