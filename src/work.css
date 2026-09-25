@@ -4,8 +4,20 @@
   width: 100%;
 }
 
+.work-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
 
+.work-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  text-align: left;
+}
 
+/* Header & Meta */
 .project-header-block {
   display: flex;
   flex-direction: column;
@@ -26,8 +38,6 @@
   line-height: calc(var(--lh-heading) * 1.5);
 }
 
-
-
 .project-meta-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -45,29 +55,7 @@
   color: var(--color-text-heading);
 }
 
-@media (max-width: 608px) {
-  .project-meta-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-
-.work-container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-32); /* Exact 32px tussen de afbeelding/grid en het tekstblok eronder */
-}
-
-.work-text-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  text-align: left;
-}
-
-
-
+/* Media Containers */
 .project-media {
   width: 100%;
   background-color: var(--color-card);
@@ -78,6 +66,14 @@
   align-items: center;
 }
 
+.project-media img,
+.project-media lottie-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Unique Mockup Showcase: Macbook */
 .project-media-macbook {
   position: relative;
   background-color: transparent;
@@ -85,7 +81,6 @@
   overflow: visible;
 }
 
-/* De grijze achtergrond die pas 64px vanaf de bovenkant begint */
 .project-media-macbook::before {
   content: "";
   position: absolute;
@@ -95,61 +90,58 @@
   z-index: -1;
 }
 
-.project-media-grid {
+.grid-2col,
+.grid-3col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   width: 100%;
 }
 
-.project-media-grid .media-card {
-  display: flex;
-  align-items: flex-start; /* Zorgt dat de afbeelding exact bovenaan begint */
-  aspect-ratio: 1/1;
-  padding: var(--space-32) var(--space-32) 0 var(--space-32);
-  background-color: var(--color-card);
-  border-radius: var(--radius-md);
-  overflow: hidden; /* Snijdt alles af wat onder de kaart uitsteekt */
+.grid-2col {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.project-media-grid .media-card img {
+.grid-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.media-card,
+.logo-card {
+  display: flex;
+  align-items: flex-start;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.media-card {
+  padding: var(--space-32) var(--space-32) 0 var(--space-32);
+}
+
+.media-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: top; /* Garandeert dat de bovenkant van de afbeelding zichtbaar blijft */
+  object-position: top;
   display: block;
   border-radius: var(--radius-sm);
 }
 
-
-
-.project-media img,
-.project-media lottie-player {
-  width: 100%;
-  height: auto;
-  display: block;
+.media-card--no-padding {
+  padding: 0;
 }
 
-
-
-/* Ladybird */
-
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items op desktop */
-  gap: var(--space-8); /* 8px tussenruimte */
-  width: 100%;
+.media-card--no-padding img {
+  height: 100%;
+  object-position: center;
+  border-radius: 0;
 }
 
 .logo-card {
-  display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1; /* Garandeert een perfect vierkant */
-  padding: var(--space-16); /* 16px padding binnenin */
-  background-color: var(--color-card);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  padding: var(--space-16);
 }
 
 .logo-card img {
@@ -157,31 +149,16 @@
   max-height: 100%;
   width: auto;
   height: auto;
-  object-fit: contain; /* Zorgt dat het logo altijd mooi en onvervormd binnen de kaart past */
+  object-fit: contain;
 }
 
-/* Responsive: Mobiel (2 naast elkaar, 3 rijen) */
+/* Responsive Rules */
 @media (max-width: 608px) {
-  .logo-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items op mobiel */
+  .project-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
 
-.logo-grid--2col {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Exact 2 kolommen naast elkaar */
-  gap: var(--space-8); /* Slechts 8px tussenruimte net als het andere grid */
-  width: 100%;
-}
-
-.project-media-grid .media-card.media-card--no-padding {
-  padding: 0;
-}
-
-.project-media-grid .media-card.media-card--no-padding img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0;
+  .grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
