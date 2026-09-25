@@ -17,7 +17,6 @@
   text-align: left;
 }
 
-/* Header & Meta */
 .project-header-block {
   display: flex;
   flex-direction: column;
@@ -55,7 +54,6 @@
   color: var(--color-text-heading);
 }
 
-/* Media Containers */
 .project-media {
   width: 100%;
   background-color: var(--color-card);
@@ -73,7 +71,6 @@
   display: block;
 }
 
-/* Unique Mockup Showcase: Macbook */
 .project-media-macbook {
   position: relative;
   background-color: transparent;
@@ -152,7 +149,6 @@
   object-fit: contain;
 }
 
-/* Responsive Rules */
 @media (max-width: 608px) {
   .project-meta-grid {
     grid-template-columns: repeat(2, 1fr);
