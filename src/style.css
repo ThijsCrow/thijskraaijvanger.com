@@ -1,8 +1,4 @@
-/* ==========================================
-   1. DESIGN TOKENS & VARIABLES
-   ========================================== */
 :root {
-  /* Colors */
   --color-bg: #FAFAFA;
   --color-card: #F0F0F0;
   --color-button: #FFFFFF;
@@ -58,6 +54,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin: 60px;
 }
 
 
@@ -143,10 +143,12 @@ header .container {
   color: var(--color-text-body);
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
   background-color: var(--color-bg);
+  color: var(--color-text-heading);
 }
 
 .btn--filled {
@@ -155,11 +157,23 @@ header .container {
   color: var(--color-text-heading);
 }
 
-.btn:hover, 
 .btn--filled:hover {
   background-color: var(--color-bg);
 }
 
-.btn-icon {
+.navigation-bar .btn-icon {
+  display: block;
   flex-shrink: 0;
+  max-width: 0;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: max-width 0.25s ease, opacity 0.2s ease, transform 0.25s ease;
+  overflow: hidden;
+}
+
+/* Wanneer het navigatie-item actief is */
+.navigation-bar .btn--filled .btn-icon {
+  max-width: 16px; /* Zelfde breedte als je width="16" in HTML */
+  opacity: 1;
+  transform: scale(1);
 }
